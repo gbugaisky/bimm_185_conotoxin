@@ -1,0 +1,2 @@
+#We don't want all our compiled Python!
+*.pyc

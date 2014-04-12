@@ -3,27 +3,31 @@
 """This is the main program for the conotoxin analyzer."""
 
 import sys
-from optparse import OptionParser
+from argparse import ArgumentParser
+from conotoxins import procFASTA
 
 if sys.version_info < (2, 7):
     print "This program requires Python 2.7 or newer."
     sys.exit(1)
 
-def main(argv,
-         parser=None,
+def main(parser=None,
          passed_defaultsini=None,
          passed_personalini=None):
     if not parser:
-        parser = OptionParser("usage: %prog [options] sequence")
+        parser = ArgumentParser()
 
-    parser.add_option("-f", "--fasta", default=None,
+    parser.add_argument("sequence", help="A protein sequence.")
+    parser.add_argument("-f", "--fasta", default=None, action="store_true",
         help="Provide a FASTA file rather than a protein sequence.")
 
-    (options, args) = parser.parse_args(argv)
+    args = parser.parse_args()
+    if args.fasta:
+        protein = procFASTA(fASTAfile)
+    else:
+        protein = args.sequence
 
-    if len(args) != 1:
-        parser.error("incorrect number of arguments")
-
+    print args
+    
 
 
 if __name__ == "__main__":
