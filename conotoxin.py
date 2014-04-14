@@ -1,4 +1,4 @@
-#!/usr/bin.env python
+#!/usr/bin/env python
 
 """This is the main program for the conotoxin analyzer."""
 
