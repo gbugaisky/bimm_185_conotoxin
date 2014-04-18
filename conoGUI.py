@@ -5,7 +5,7 @@ import wx
 import wx.lib.sized_controls as sc
 import wx.wizard as wiz
 
-from submodules import ValidateDNA
+from submodules import SeqValidation, callpBLAST
 
 #End of imports
 
@@ -47,20 +47,30 @@ class MainFrame(wx.Panel):
         grid = wx.GridBagSizer(hgap=5, vgap=5)
         hSizer = wx.BoxSizer(wx.HORIZONTAL)
 
-        self.instructions = wx.StaticText(self, label="Enter A DNA Sequence:")
+        self.instructions = wx.StaticText(self, label="Enter A Sequence:")
         grid.Add(self.instructions, pos=(0, 0))
 
         # Sequence sentry box
         self.sequenceBox = wx.TextCtrl(self, size=(400, -1))
         grid.Add(self.sequenceBox, pos=(1, 0))
 
+        # DNA/Protein selector
+        sequenceTypeList = ['Nucleotide', "Protein"]
+        self.sequenceType = wx.RadioBox(self, label="What type of sequence?", 
+            choices=sequenceTypeList, style=wx.RA_SPECIFY_COLS)
+        grid.Add(self.sequenceType, pos=(1, 1))
+        self.Bind(wx.EVT_RADIOBOX, self.EvtRadioType, self.sequenceType)
+
         # GO button
         self.submitButton = wx.Button(self, label="BLAST Sequence")
-        grid.Add(self.submitButton, pos=(1, 1))
+        grid.Add(self.submitButton, pos=(2, 1))
         self.Bind(wx.EVT_BUTTON, self.OnSubmit, self.submitButton)
 
         mainSizer.Add(grid, 0, wx.ALL, 5)
         self.SetSizerAndFit(mainSizer)
+
+    def EvtRadioType(self, event):
+        print ("EvtRadioType: %d\n" % event.GetInt())
 
     def OnSubmit(self, event):
         sequence = self.sequenceBox.GetValue()
@@ -70,7 +80,7 @@ class MainFrame(wx.Panel):
             dlg.ShowModal()
             dlg.Destroy()
 
-        elif not ValidateDNA.validate_dna_string(sequence):
+        elif not SeqValidation.validate_dna_string(sequence):
             print "Here"
             dlg = wx.MessageDialog(self, "Sequences must only contain the characters ACGT!",
                 "Syntax Error", wx.OK | wx.ICON_INFORMATION)
@@ -78,7 +88,7 @@ class MainFrame(wx.Panel):
             dlg.Destroy()
 
         else:
-            #smods.
+            print callpBLAST.callpBLAST(sequence)
             dlg = wx.MessageDialog(self, "Your Sequence Is: " + sequence, "INFO",
                 wx.OK | wx.ICON_INFORMATION)
             dlg.ShowModal()
