@@ -2,6 +2,7 @@
 
 import tempfile
 import os
+import math
 from sys import argv
 
 def parser(filename, charstart):
@@ -28,19 +29,22 @@ def parser(filename, charstart):
 				for idx in range(0, maxSpacing):
 					outf.write(' ')
 				outf.write('1')
-				for idx in range(1, seqChar):
+				for idx in range(1, (seqChar - len(str(seqChar)))):
 					outf.write(' ')
 				outf.write(str(seqChar) + '\n')
 				i += 1
 
-			if (i % 10)
+			if (math.log10(float(i)).is_integer()):
+				maxSpacing -= 1
 			#write the sequence number, followed by spaces, followed by the sequence
 			outf.write(str(i))
-			outf.write(str(i)) " " + line[int(charstart):])
+			for idx in range(0, maxSpacing):
+				outf.write(' ')
+			outf.write(line[int(charstart):])
 			i += 1
 		outname = outf.name
 	try:
-		os.remove("multi\\" + filename)
+		os.remove("multi\\temp" + filename)
 	except OSError:
 		pass
 	os.rename(outname, "multi\\temp" + filename)
