@@ -1,9 +1,7 @@
-
-<!-- saved from url=(0053)http://emboss.bioinformatics.nl/output/902118/outfile -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css"></style></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;"># Gribskov Protein Profile
-# Columns are amino acids A-&gt;Z
+# Gribskov Protein Profile
+# Columns are amino acids A->Z
 # Last column is indel penalty
-# Rows are alignment positions 1-&gt;n
+# Rows are alignment positions 1->n
 Gribskov
 Name		G_superfamily
 Matrix		pprofile
@@ -32,4 +30,3 @@ Consensus	MSGMGVLLLVLLLVMPLAA
 -1.00 0.00 -8.00 -5.00 -3.00 12.00 -5.00 -2.00 8.00 0.00 -3.00 15.00 12.00 -4.00 0.00 -3.00 -1.00 -4.00 -4.00 -1.00 0.00 8.00 5.00 0.00 3.00 0.00 4.55 4.55
 15.00 0.00 3.00 3.00 3.00 -5.00 6.00 -1.00 0.00 0.00 0.00 -1.00 0.00 2.00 0.00 5.00 2.00 -3.00 4.00 4.00 0.00 2.00 -8.00 0.00 -3.00 0.00 4.55 4.55
 15.00 0.00 3.00 3.00 3.00 -5.00 6.00 -1.00 0.00 0.00 0.00 -1.00 0.00 2.00 0.00 5.00 2.00 -3.00 4.00 4.00 0.00 2.00 -8.00 0.00 -3.00 0.00 4.55 4.55
-</pre></body></html>
