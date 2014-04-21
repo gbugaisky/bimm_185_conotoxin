@@ -4,6 +4,7 @@ import tempfile
 import os
 import math
 from sys import argv
+import subprocess
 
 def parser(filename, charstart):
 	#first, get a line count to properly space the sequences
@@ -23,15 +24,10 @@ def parser(filename, charstart):
 		i = 0
 		for line in inf:
 
-			# Write the file header
+			# Write the file header, files mimic CLUSTAL W format
 			if i is 0:
-				seqChar = len(line) - int(charstart)
-				for idx in range(0, maxSpacing):
-					outf.write(' ')
-				outf.write('1')
-				for idx in range(1, (seqChar - len(str(seqChar)))):
-					outf.write(' ')
-				outf.write(str(seqChar) + '\n')
+				outf.write("CLUSTAL W(1.4) multiple sequence alignment")
+				outf.write('\n\n\n')
 				i += 1
 
 			if (math.log10(float(i)).is_integer()):
@@ -43,11 +39,16 @@ def parser(filename, charstart):
 			outf.write(line[int(charstart):])
 			i += 1
 		outname = outf.name
+
+	multiName = "multi\\" + os.path.splitext(filename)[0] + ".clustal"
 	try:
-		os.remove("multi\\temp" + filename)
+		os.remove(multiName)
 	except OSError:
 		pass
-	os.rename(outname, "multi\\temp" + filename)
+	os.rename(outname, multiName)
+
+	# Then, perform EMBOSS prophecy on the output, and save the Gribskov profile
+	
 
 if __name__ == "__main__":
 	parser(argv[1], argv[2])
