@@ -1,0 +1,24 @@
+CLUSTAL O(1.2.1) multiple sequence alignment
+
+
+Lt9a_variant_2_precursor      --MTLTKSAVLILVLLLAFDNFADVQPGLITMGGGRLS------NLLSKR--VSIW----
+Lt9a_precursor                --MTLTKSAVLILVLLLAFDNFADVQPGLITMGGGRLS------NLLSKR--VRIW----
+Lt9a_variant_precursor        --MTLTKSAVLILVLLLAFDNFADVQPGLITMGGGRLS------NLLSKR--VSIW----
+Pu9.2_precursor               MHPSLARSALVMLLLLFALG----VQSGQITRDVDSA-------DLKSLRKPMTLLGSLY
+Rg9.1_precursor               MHLSLARSAVLILLLLFALGNFVGVQPGQITRDADHGINLRS---LRKQMSRSPL----V
+Im9.12_precursor              MHLSLASSAVLMLLLLFALGNFVGVQPGQITRDADN------LRNLRSQWKKRGLFKSLD
+TxIXA_precursor               MHLSLARSAVLMLLLLFALGNFVVVQSGQITRDVDNGQLTDNRRNLQSKWKPVSLYMS--
+GmIXA_precursor               MHLSLARSAVLMLLLLFALGNFVVVQSGLITRDVDNGQLTDNRRNLQTEWNPLSLFMS--
+Pu9.1_precursor               MHLSLARPAVLMLLLLFALGNFNGVQPGQITRDVDNS-----VRNLQSRWEPMSLLKSLN
+                                 :*:  *:::*:**:*:     ** * **              * .      :     
+
+Lt9a_variant_2_precursor      ---FCASRTCSTPADCN-PCTCESGVCVDWL--------
+Lt9a_precursor                ---FCASRTCSAPADCN-PCTCESGVCVDWL--------
+Lt9a_variant_precursor        ---FCASRTCSAPADCN-PCTCESGVCVDWL--------
+Pu9.2_precursor               KRVGCG-DHCLSNAHCPPVCRDCTYDSGCQM--------
+Rg9.1_precursor               KGAFCG-QAC-SSVKCPKKCFCHPEEKVCYREMRTKERD
+Im9.12_precursor              KRTNCE-AHS-CSPSCPDECYCDTNEDTCHPERRGH---
+TxIXA_precursor               -RRGCN-NSCQEHSDCESHCICTFRGCGAVNG-------
+GmIXA_precursor               -RRSCN-NSCQSHSDCASHCICTFRGCGAVNG-------
+Pu9.1_precursor               KPRSCT-GSCSSSSFCPPGCDCFHAECT-----------
+                                  *    .     *   *                   

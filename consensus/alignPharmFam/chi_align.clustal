@@ -1,0 +1,13 @@
+CLUSTAL O(1.2.1) multiple sequence alignment
+
+
+CMrX                       -GICCGVSFCYPC--
+CMrVIA_[K6P]               --VCCGYPLCHPC--
+CMrVIA_[K6P]_amidated      --VCCGYPLCHPCX-
+CMrVIA_amidated            --VCCGYKLCHPCX-
+MrIB_C-term_amidated       VGVCCGYKLCHPCX-
+MrIB                       VGVCCGYKLCHPC--
+MrIA                       NGVCCGYKLCHPC--
+CMrVIA                     --VCCGYKLCHPC--
+Cyclic_MrIA                NGVCCGYKLCHPCAG
+                             :***  :*:**  

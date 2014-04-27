@@ -1,0 +1,32 @@
+CLUSTAL O(1.2.1) multiple sequence alignment
+
+
+MrVIA                         ----------ACR--KKWEYCIVPIIGFIYCCPGLICGP---FVCV------
+MrVIB                         ----------ACS--KKWEYCIVPILGFVYCCPGLICGP---FVCV------
+conotoxin-GS                  ----------ACS--GRGSRC------PPQCCMGLRCGRGNPQKCIGAHEDV
+SxIIIA                        --RCCTGKKGSCS--GRACKN------LKCCAX-------------------
+SxIIIB                        -QKCCTGKKGSCS--GRACKN------LRCCAX-------------------
+PIIIA                         QRLCCGFP-KSCR--SRQCKP------HRCCX--------------------
+GIIIA_[R13A]                  -RDCCTPP-KKCK--DAQCKP------QRCCAX-------------------
+GIIIA                         -RDCCTPP-KKCK--DRQCKP------QRCCAX-------------------
+GIIIB                         -RDCCTPP-RKCK--DRRCKP------MKCCAX-------------------
+GIIIC                         -RDCCTPP-KKCK--DRRCKP------LKCCAX-------------------
+KIIIA[Del1,S3/S4Aop,C9A]      ----C-----NC---NKWARD------HARCCN-------------------
+KIIIA[C4A,C16A]               ---CC-----NAS--SKWCRD------HSRCAN-------------------
+KIIIA[C2A,C15A]               ---CA-----NCS--SKWCRD------HSRACN-------------------
+KIIIA                         ---CC-----NCS--SKWCRD------HSRCCN-------------------
+KIIIA[C1A,C9A]                ---AC-----NCS--SKWARD------HSRCCN-------------------
+TIIIA                         RHGCCKGP-KGCS--SRECRP------QHCCX--------------------
+CnIIIB                        -QGCCGEP-NLCF--TRWCRN------NARCCRQQ-----------------
+SmIIIA                        -QRCCNGR-RGCS--SRWCRD------HSRCC--------------------
+CnIIIC                        -QGCCNGP-KGCS--SKWCRD------HARCCX-------------------
+SIIIB                         -QNCCNG---GCS--SKWCKG------HARCCX-------------------
+SIIIA                         -QNCCNG---GCS--SKWCRD------HARCCX-------------------
+CIIIA                         -GRCCEGP-NGCS--SRWCKD------HARCCX-------------------
+MIIIA                         -QGCCNVP-NGCS--GRWCRD------HAQCCX-------------------
+CnIIIA                        -GRCCDVP-NACS--GRWCRD------HAQCCX-------------------
+LtVd                          --DCCPAK-L-------------------LCCNP------------------
+PnIVB                         ---CCKYG-WTCWLGCSPCGC-------------------------------
+PnIVA                         ---CCKYG-WTCLLGCSPCGC-------------------------------
+LtVIC                         ---------WPCKVAGSPCGL------VSECCGTCNVLR---NRCV------
+                                                                                  

@@ -1,0 +1,34 @@
+CLUSTAL O(1.2.1) multiple sequence alignment
+
+
+Pu14.4_precursor             MKLSVMFIVF--LMLTVPMTGAAVSRRAA---NGGEAVGDRAAN-LMALLQE-RQCPPTC
+Pu14.5_precursor(2)          MKLSVMFIVFQQMMLTMPMTGAAVSRRAANDGNGGEAVGDRAAN-LMALLQE-SLCPPGC
+Pu14.6_precursor             -VRAVMFIVF--LMLTMPMTGAAVSRRAA---NGGEAVGDRAAN-LMALLQE-SLCPPGC
+Pu14.5_precursor             MKLSVMFIVF--LMLTMPMTGAAVSHRAA---N-GEAVGDRAAN-LMALLQE-SLCPPGC
+Pu14.5_precursor(3)          -KLSVMFIVF--LMLTMPMTGAAVSHRAA---NGGEAVGDRAAN-LMALLQE-SLCPPGC
+G14.5_precursor              MKLSVMFIVF--LMLTMPMTCAGISRRADNGGEAGALSGDRAAN-IMALLQA-RGCPPMC
+LtXIVA_precursor             MKLSVMFIVF--LMLTMPMTCAGISRSATNGGEADVRAHDKAAN-LMALLQE-RMCPPLC
+lt14a_variant_precursor      MKLSVMFIVF--LMLTMPMTCAGISRSATNGGEADVRAHDKAAN-LMALLQE-RMRPPLC
+Cl14.8_precursor             MKLSVTFIAL---MLTMTLTQGFVLQ-AIDGRDNSGLDDLSEADSMEHQLQRRD-CG-RC
+Eu14.7_precursor             MKLSVTFIVV--LMLTTSLTCGFNLF-SNNGKRAYGRHDPNAADRLVREKQASRACYPPC
+Cl14.1b_precursor            MNVTVMFLVL---LLTMPLTDGFNIR-AINGGELFGLVQRDAGNALDHGFYRRGDCPPWC
+Cl14.2b_precursor            MNVTVMFLVL--LLLTMPLTDGFNIR-ATNGGELFGPVQRDAGNVLDHGFQRRRECPPRC
+Cl14.1a_precursor            MNVTVMFLVL--LLLTMPLTDGFNIR-ATNGGELFGPVQRDAGNVLDHGFQRRRDCPPWC
+Cl14.2a_precursor            MNVTVMFLVL--LLLTMPLTDGFNIR-ATNGGELFGPVQRDAGNVLDHGFQRRRECPPWC
+                                :* *:..   :**  :* .     :              .: :             *
+
+Pu14.4_precursor             -PSCDDC-------------
+Pu14.5_precursor(2)          YPSCTDCR----YMFP----
+Pu14.6_precursor             YPSCTNCR----YMFP----
+Pu14.5_precursor             YPSCTDCR----YMFP----
+Pu14.5_precursor(3)          YPSCTDCR----YMFP----
+G14.5_precursor              NPGCHNCS------------
+LtXIVA_precursor             KPSCTNCG------------
+lt14a_variant_precursor      KPSCTNCG------------
+Cl14.8_precursor             PLGQ-YCDAEAGMCKPTLIM
+Eu14.7_precursor             FGSS-VCYG--GRCFFIGFR
+Cl14.1b_precursor            VG-A-RCRA--GKC------
+Cl14.2b_precursor            PT-S-HCNA--GTC------
+Cl14.1a_precursor            PT-S-HCNA--GTC------
+Cl14.2a_precursor            PT-S-HCNA--GTC------
+                                   *             

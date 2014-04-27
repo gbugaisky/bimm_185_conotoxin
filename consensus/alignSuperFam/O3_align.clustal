@@ -1,0 +1,66 @@
+CLUSTAL O(1.2.1) multiple sequence alignment
+
+
+Eu6.6_precursor                     MSGLGIMVLTLLLLVFMATSHQHRGGKQLMLRNNLQKRTCSSPSNC------PT------
+Pu6.37_precursor                    MSGLGIMVLTLLLLVFMATSHQDAGVKRLMLRNKLQKRTCSSSSDC------PT------
+G27_precursor                       MSGLGIMVLTLLLLVSMAISHRYAREKQATRRDVVNIRRRSK----------PKTPECKR
+Bromosleeper_peptide_precursor      MSGLGFMVLTLLLLTFMATSHQDRGEKQATQRHAINVIRRRLITRW------ATIDECEE
+G6.6_precursor                      MSGLRIMVLTLLLLVLMTTSHQDAGEKQAMQRDAKNFSRRRLGIRK------PKTRECEM
+CaFr179_precursor                   MSGLGIMVLTLLLLVFMEASHQDAGEKQATQRDAINVRRRRSL------ARRTVTEECEE
+Ar6.27_precursor                    MSGLGILVLTLLLLVYMATSHQDAGEKQATQRDAINVRRRRSL------TRR-VAEECEE
+Ar6.26_precursor                    MSGLGIMLLTLLLLVFMETSHQDAGEKQATQRDAINVRRRRSL------TRR-VTEECEE
+Ar6.25_precursor                    MSGLGIMVLTLLLLVFMETSHQDAGEKQAMQRDAINVRRRRSITRR-------VSEACEE
+Pn6.10_precursor                    MSGLGIMVLTLLLLVFMETSHQDAGEKQAMQRDAINVRRRRSITRR-------VSEACEE
+Pu6.35_precursor                    MSGLGIMVLTLLLLVFMVTSHQDAGDKQAMQRDAINVRRRRSI------TRRTVTEACEE
+Pu6.36_precursor                    MSGLGIMVLTLLLLVFMATSHQDAGDKQAMQRDAINVRRRRSITRRRSITRRTVTEACEE
+Vn6.19_precursor                    MSGLGIMVLTLLLLVSMATSHQDGGGKQATQRDAINVRRRRSITRR------VVTEACEE
+Vn6.20_precursor                    MSGLGIMVLALLLLVFMATSHQDGGGKQATQRDAINVRRRRSITRR------VVTETCKE
+Vn6.22_precursor                    MSGLGIMVLTLLLLVSMATSHQDGGGKQATQRDAINVRRRRSITRRE-----VVTEECEE
+Vn6.21_precursor                    MSGLGIMVLTLLLLVSMATSHQDGRGKQATQRDAINVRRRRSITRT---------EACYE
+Vn6.21_precursor(2)                 MSGLEIMVLTLLLLVSMATSHQDGGEKQATQRDAINVRR-RSITRT---------EACYE
+LiCr173_precursor                   MSGLGTMVLTLLLLVFMVTSHQDGGKKQATQRNAVNIRRRKSITQR------TTDEKCNE
+Pu6.34_precursor                    MSGLGIMVLTLLLLVFMATSHQDAGDKQAMQRDAINVRRRRSITRR------AVDEECNE
+Ts6.4_precursor                     MSGLGIMVLTLLLLVFMATSHQDAGEKQATQRDAINVRRRRSITRR-------VDEECNE
+Ts6.5_precursor                     MSGLGIMVLTLLLFMFMATSHQDAGEKQATQRDAINVRRRRSITRR-------GDEECNE
+Ts6.6_precursor                     MSGLGIMVLTLLLFMFMATSHQDAGEKQATQRDAINVRRRRSITRR-------GDEECNE
+Vi6.7_precursor                     MSGLGIMVLTLLLLVFMVTSHQDSGEKRATQRNAINVRRRRSIIRR------TVDEACNE
+Ts6.7_precursor                     MSGLGIMVLTLLLLVFMATSHQDAGEKQATQRDAVNVRRRRSIAGR------TTTEECDE
+Ar6.22_precursor                    MSRLGIMVLTLLLLVFIVTSHQDAGEKQATKRAAVNFRWRRSFTRR------AAAEECEE
+Ar6.20_precursor                    MSRLGIMVLTLLLLVYMATSHQDAGEKQATQRDAINFRWKRSLTRR------TATEECEE
+Ar6.24_precursor(2)                 MSRLGIMVLTLLLLVFIVTSHQDAGEKQATQRAAINFRWKRSLTRR------TATEECEE
+Ar6.21_precursor                    MSRLGIMVLTLLLLVFIVTSHQDAGEKQATQRNAINFRWRRSFTRR------AATEECEE
+Ar6.24_precursor                    MSRLGIMVLTLLLLVFIVTSHQDAGEKQATHRGAINFRWRRSLIRR------TATEECEE
+Pn6.11_precursor                    MSRLGIMVLTLLLLVFIVTSHQDAGEKQATQRDAINFRWRRSLIRR------TATEECEE
+                                    ** *  ::*:***:  :  **:    *:   *   :                        
+
+Eu6.6_precursor                     ---------GQECCPDKVDEPEGFCADECIIT---
+Pu6.37_precursor                    ---------GQECCPDKLDEPEGSCANECIIT---
+G27_precursor                       ICKLE----EKKCCCVRS--EGPKCSRLCGLPMFC
+Bromosleeper_peptide_precursor      TCNVT----FKTCCGPP---GDWQCVEACPV----
+G6.6_precursor                      LCEQE----EKHCCRIRN--ENIQCAPRCLGIGV-
+CaFr179_precursor                   DCED----EEKHCCNTNN--G-PSCARLCFG----
+Ar6.27_precursor                    SCED----EEKHCCNTNN--G-PSCAPQCFG----
+Ar6.26_precursor                    NCEE----EEKHCCNTNN--G-PSCAPQCFG----
+Ar6.25_precursor                    SCEE----EEKHCCHENN--GVYTCLRYCWG----
+Pn6.10_precursor                    SCED----EEKHCCHENN--GVYTCLRYCWG----
+Pu6.35_precursor                    SCEEEEKEEEKHCCHVNN--GVPSCARICWG----
+Pu6.36_precursor                    SCEE----EEKHCCHVNN--GVPSCARICWG----
+Vn6.19_precursor                    YCEDR---DKKTCCGLEN--GEPFCATLCFG----
+Vn6.20_precursor                    YCEDR---D-KTCCGLEN--GQPDCANLCLG----
+Vn6.22_precursor                    YCKEQ---N-KTCCGLTN--GRPRCVGVCFG----
+Vn6.21_precursor                    YCKEQ---N-KTCCGISN--GRPICVGGCIR----
+Vn6.21_precursor(2)                 YCKEQ---N-KTCCGISN--GRPICVGGCIR----
+LiCr173_precursor                   YCEER----DRNCCGKAN--GEPRCARMCFG----
+Pu6.34_precursor                    YCEER---KDKNCCGRTN--GEPRCATMCFG----
+Ts6.4_precursor                     YCDDR----NKECCGRTN--GHPRCANVCFG----
+Ts6.5_precursor                     HCEDR----NKECCGRTN--GHPRCANVCFG----
+Ts6.6_precursor                     YCDDR----NKECCGRTN--GHPRCANVCFG----
+Vi6.7_precursor                     YCEER----NKNCCGRTD--GEPVCAQACLG----
+Ts6.7_precursor                     YCEDL----NKNCCGLSN--GEPVCATACLG----
+Ar6.22_precursor                    YCEEE----EKTCCGEED--GEPVCAEFCLG----
+Ar6.20_precursor                    SCEEE----EKTCCGEXD--GEPVCARFCLG----
+Ar6.24_precursor(2)                 YCEDE----EKTCCGEED--GEPVCARFCLG----
+Ar6.21_precursor                    YCEDE----EKTCCGLED--GEPVCATTCLG----
+Ar6.24_precursor                    YCEDE----EKTCCGLED--GEPVCATTCLG----
+Pn6.11_precursor                    YCEDE----EKTCCGLED--GEPVCATTCLG----
+                                              : **          *   *      
