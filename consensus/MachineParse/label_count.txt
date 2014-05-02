@@ -1,0 +1,6 @@
+{"delta conotoxin": 19, "rho conotoxin": 1, "mu conotoxin": 28, "iota conotoxin": 2, "omega conotoxin": 51, "alpha conotoxin": 143, "kappa conotoxin": 8, "chi conotoxin": 9, "sigma conotoxin": 1, "gamma conotoxin": 4, "epsilon conotoxin": 1}
+delta conotoxin
+mu conotoxin
+omega conotoxin
+alpha conotoxin
+chi conotoxin
