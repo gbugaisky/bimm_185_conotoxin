@@ -16,15 +16,3 @@ O2 superfamily
 D superfamily
 M superfamily
 S superfamily
-
-XI
-I
-IV
-II
-XX
-VIII
-XIV
-V
-VI/VII
-X
-III

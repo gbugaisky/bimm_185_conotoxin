@@ -23,6 +23,7 @@ def parseConotoxinXML(xmlFile):
     end = clock()
     print "Load time of Database: " + str(end - start)
     superCount = {}
+    protName = {}
     tree.getroot()
 
     # Create dictionary of all superfamilies
@@ -46,9 +47,16 @@ def parseConotoxinXML(xmlFile):
                 for element in tree.findall('entry'):
                     try:
                         superfamily = element.find('geneSuperfamily').text
-                        if superfamily == familyName and 'precursor' in element.find('name').text:
-                            f.write("> " + element.find('name').text + '\n')
-                            f.write(element.find('sequence').text + '\n\n')
+                        name = element.find('name').text
+                        if superfamily == familyName and 'precursor' in name:
+                            if name not in protName:
+                                protName[name] = 1
+                                f.write("> " + name.replace(' ', '_') + '\n')
+                                f.write(element.find('sequence').text + '\n\n')
+                            else:
+                                protName[name] += 1
+                                f.write("> " + name.replace(' ', '_') + '(' + str(protName[name]) + ')' '\n')
+                                f.write(element.find('sequence').text + '\n\n')
                     except AttributeError:
                         continue
     end = clock()
