@@ -12,7 +12,7 @@ except ImportError:
 def parseConotoxinXML(xmlFile):
     SEQUENCES_PATH = ".\\MachineParse\\"
     SEQUENCE_THRESHOLD = 9
-    FEATURES = "length_cysteines_superfamily"
+    FEATURES = "superfamily_cFrame_cysteines"
 
     #create the sequence directory
     if not os.path.exists(SEQUENCES_PATH):
@@ -26,6 +26,7 @@ def parseConotoxinXML(xmlFile):
     superCount = {}
     tree.getroot()
     geneSuperCount = {}
+    cFrameworkCount = {}
 
     # Create dictionary of all superfamilies
     for element in tree.findall('entry'):
@@ -35,12 +36,15 @@ def parseConotoxinXML(xmlFile):
             superCount[superfamily] = superCount.get(superfamily, 0) + 1
             superfamily = element.find('geneSuperfamily').text
             geneSuperCount[superfamily] = geneSuperCount.get(superfamily, 0) + 1
+            superfamily = element.find('cysteineFramewrok').text
+            cFrameworkCount[superfamily] = cFrameworkCount.get(superfamily, 0) + 1
 
         except AttributeError:
             continue
 
     superMap = []
     geneMap = geneSuperCount.keys()
+    cFrameMap = cFrameworkCount.keys()
    
     #generate list and "map" for labels
     for familyName, count in superCount.iteritems():
@@ -49,8 +53,8 @@ def parseConotoxinXML(xmlFile):
 
     # This file only exists for debugging and analytic purposes
     with open(SEQUENCES_PATH + 'label&gene_count.txt', 'w') as supFile:
-        supFile.write(json.dumps(superCount) + '\n' + '\n'.join(superMap) + '\n\n' + '\n'.join(geneMap))
-    exit()
+        supFile.write(json.dumps(superCount) + '\n' + '\n'.join(superMap) + '\n\n' + '\n'.join(geneMap) + '\n\n' + '\n'.join(cFrameMap))
+    #exit()
 
     # now, create the data file
     start = clock()
@@ -59,7 +63,7 @@ def parseConotoxinXML(xmlFile):
             try:
                 superfamily = element.find('pharmacologicalFamily').text
                 if superfamily in superMap:
-                    f.write(str(len(element.find('sequence').text)) + ' ' + str(element.find('sequence').text.count('C')) + ' ' + 
+                    f.write(str(geneMap.index(element.find('geneSuperfamily').text)) + ' ' + str(cFrameMap.index(element.find('cysteineFramewrok').text)) + ' ' + str(element.find('sequence').text.count('C')) + ' ' + 
                         str(superMap.index(superfamily) / float(len(superMap))) + '\n')
             except AttributeError:
                 continue
