@@ -42,12 +42,12 @@ def parseConotoxinXML(xmlFile):
     start = clock()
     for familyName, count in superCount.iteritems():
         if count >= SEQUENCE_THRESHOLD:
-            with open(SEQUENCES_PATH + familyName + ".fasta", 'w') as f:
+            with open(SEQUENCES_PATH + familyName +".fasta", 'w') as f:
                 for element in tree.findall('entry'):
                     try:
                         superfamily = element.find('pharmacologicalFamily').text
                         if superfamily == familyName:# and 'precursor' in element.find('name').text:
-                            f.write("> " + element.find('name').text.replace(' ', '_') + '\n')
+                            f.write(">" + element.find('name').text.replace(' ', '_') + '\n')
                             f.write(element.find('sequence').text + '\n\n')
                     except AttributeError:
                         continue

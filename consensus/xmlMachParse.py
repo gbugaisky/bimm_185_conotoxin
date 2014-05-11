@@ -13,7 +13,7 @@ except ImportError:
 def parseConotoxinXML(xmlFile):
     SEQUENCES_PATH = ".\\MachineParse\\"
     SEQUENCE_THRESHOLD = 9
-    FEATURES = "superfamily_avgCdist"
+    FEATURES = "cysCount_avgCdist"
 
     #create the sequence directory
     if not os.path.exists(SEQUENCES_PATH):
@@ -71,11 +71,14 @@ def parseConotoxinXML(xmlFile):
                     for i in range(0, len(cysLoc) - 1):
                         cysAvg += (cysLoc[i + 1] - cysLoc[i] + 1)
                     cysAvg = cysAvg / (len(cysLoc) - 1)
+                    f.write(str(len(cysLoc)) + ' ' + str(cysAvg) + ' ' + str(superMap.index(superfamily)) +'\n')
+                    """
                     try:
                         f.write(str(geneMap.index(element.find('geneSuperfamily').text)) + ' ' + str(cysAvg) + ' ' + 
                             str(superMap.index(superfamily)) + '\n')# / float(len(superMap))) + '\n')
                     except AttributeError:
                         f.write('-1 ' + str(cysAvg) + ' ' + str(superMap.index(superfamily)) + '\n')
+                    """
             except AttributeError:
                 print traceback.format_exc()
                 continue
