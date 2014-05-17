@@ -3,6 +3,7 @@
 import traceback
 import json
 import os
+import logging
 from time import clock
 
 try:
@@ -13,7 +14,8 @@ except ImportError:
 def parseConotoxinXML(xmlFile):
     SEQUENCES_PATH = ".\\MachineParse\\"
     SEQUENCE_THRESHOLD = 9
-    FEATURES = "cysCount_avgCdist"
+    FEATURES = "mass_isoElectricPoint_cysAvg"
+    logging.basicConfig(filename="xmlLogging.txt")
 
     #create the sequence directory
     if not os.path.exists(SEQUENCES_PATH):
@@ -22,6 +24,7 @@ def parseConotoxinXML(xmlFile):
     # Take the XML database and 'import' it
     start = clock()
     tree = ET.ElementTree(file=xmlFile)
+    #nucleicTree = ET.ElementTree(file="conoserver_nucleic.xml")
     end = clock()
     print "Load time of Database: " + str(end - start)
     superCount = {}
@@ -66,12 +69,17 @@ def parseConotoxinXML(xmlFile):
                 if superfamily in superMap:
                     # ' ' + str(cFrameMap.index(element.find('cysteineFramewrok').text)) + 
                     sequence = element.find('sequence').text
+
+                    # Calculate Average Distance b/w all the cysteines
                     cysLoc = [i for i, ltr in enumerate(sequence) if ltr == 'C']
                     cysAvg = 0.0
                     for i in range(0, len(cysLoc) - 1):
                         cysAvg += (cysLoc[i + 1] - cysLoc[i] + 1)
                     cysAvg = cysAvg / (len(cysLoc) - 1)
-                    f.write(str(len(cysLoc)) + ' ' + str(cysAvg) + ' ' + str(superMap.index(superfamily)) +'\n')
+                    
+                    mass = element.find('averageMass').text
+                    isoElec = element.find('isoelecticPoint').text
+                    f.write(mass + ' ' + isoElec + ' ' + str(cysAvg) + ' ' + str(superMap.index(superfamily)) +'\n')
                     """
                     try:
                         f.write(str(geneMap.index(element.find('geneSuperfamily').text)) + ' ' + str(cysAvg) + ' ' + 
@@ -80,7 +88,7 @@ def parseConotoxinXML(xmlFile):
                         f.write('-1 ' + str(cysAvg) + ' ' + str(superMap.index(superfamily)) + '\n')
                     """
             except AttributeError:
-                print traceback.format_exc()
+                logging.warning( traceback.format_exc() )
                 continue
                 
     end = clock()

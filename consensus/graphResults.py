@@ -2,19 +2,23 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
+from mpl_toolkits.mplot3d import Axes3D
 
 #with open(".\\MachineParse\\length_cysteines.txt", 'rb') as readIn:
-data = np.genfromtxt(".\\MachineParse\\cysCount_avgCdist.csv", delimiter=' ', names=['x', 'y', 'label'])
+data = np.genfromtxt(".\\MachineParse\\mass_isoElectricPoint_cysAvg.csv", delimiter=' ', names=['x', 'y', 'z', 'label'])
 color_REF = ['#FF0000', '#0000CC', '#003300', '#E6E600', '#CC9900']
 
-
-fig, ax = plt.subplots()
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
 
 for element in data:
-	ax.scatter(element['x'], element['y'], s=80, c=color_REF[(element['label'].astype(int))], alpha=0.1)
-ax.set_title("Feature Sets: Cys Distance and # of Cysteines")
-ax.set_xlabel('Cysteine Count')
-ax.set_ylabel('Cysteine Distance')
+	print element
+	print color_REF[(element['label'].astype(int))]
+	ax.scatter(element['x'], element['y'], element['z'], s=80, c=color_REF[(element['label'].astype(int))], alpha=0.1)
+ax.set_title("Feature Sets: Mass, Isoelectric Point, Average Cysteine Distance")
+ax.set_xlabel('Mass')
+ax.set_ylabel('Isoelectric Point')
+ax.set_zlabel('Average Cysteine Distance (bp)')
 
 #cbar = fig.colorbar(cax, ticks=[0, 0.2, 0.4, 0.6, 0.8, 1])
 #cbar.ax.set_yticklabels(['delta', 'mu', 'omega', 'alpha', 'chi', ''])
