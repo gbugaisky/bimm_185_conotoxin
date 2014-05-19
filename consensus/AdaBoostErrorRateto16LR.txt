@@ -1,0 +1,96 @@
+
+Current Learn Rate: 0.25
+Average AdaBoost Error with 25 estimators: 0.216695652174
+Average AdaBoost Error with 50 estimators: 0.216260869565
+Average AdaBoost Error with 75 estimators: 0.218608695652
+Average AdaBoost Error with 100 estimators: 0.218826086957
+Average AdaBoost Error with 125 estimators: 0.216939130435
+Average AdaBoost Error with 150 estimators: 0.215188405797
+Average AdaBoost Error with 175 estimators: 0.213763975155
+Average AdaBoost Error with 200 estimators: 0.213304347826
+Average AdaBoost Error with 225 estimators: 0.213410628019
+Average AdaBoost Error with 250 estimators: 0.214173913043
+
+Current Learn Rate: 0.5
+Average AdaBoost Error with 25 estimators: 0.230956521739
+Average AdaBoost Error with 50 estimators: 0.22052173913
+Average AdaBoost Error with 75 estimators: 0.211710144928
+Average AdaBoost Error with 100 estimators: 0.211608695652
+Average AdaBoost Error with 125 estimators: 0.211617391304
+Average AdaBoost Error with 150 estimators: 0.211594202899
+Average AdaBoost Error with 175 estimators: 0.210708074534
+Average AdaBoost Error with 200 estimators: 0.21102173913
+Average AdaBoost Error with 225 estimators: 0.210801932367
+Average AdaBoost Error with 250 estimators: 0.211373913043
+
+Current Learn Rate: 0.75
+Average AdaBoost Error with 25 estimators: 0.209739130435
+Average AdaBoost Error with 50 estimators: 0.211043478261
+Average AdaBoost Error with 75 estimators: 0.210376811594
+Average AdaBoost Error with 100 estimators: 0.211565217391
+Average AdaBoost Error with 125 estimators: 0.215165217391
+Average AdaBoost Error with 150 estimators: 0.216724637681
+Average AdaBoost Error with 175 estimators: 0.217167701863
+Average AdaBoost Error with 200 estimators: 0.219434782609
+Average AdaBoost Error with 225 estimators: 0.221275362319
+Average AdaBoost Error with 250 estimators: 0.2228
+
+Current Learn Rate: 1.0
+Average AdaBoost Error with 25 estimators: 0.222956521739
+Average AdaBoost Error with 50 estimators: 0.228260869565
+Average AdaBoost Error with 75 estimators: 0.230898550725
+Average AdaBoost Error with 100 estimators: 0.23152173913
+Average AdaBoost Error with 125 estimators: 0.233460869565
+Average AdaBoost Error with 150 estimators: 0.235072463768
+Average AdaBoost Error with 175 estimators: 0.236397515528
+Average AdaBoost Error with 200 estimators: 0.237260869565
+Average AdaBoost Error with 225 estimators: 0.237913043478
+Average AdaBoost Error with 250 estimators: 0.238573913043
+
+Current Learn Rate: 2.0
+Average AdaBoost Error with 25 estimators: 0.549043478261
+Average AdaBoost Error with 50 estimators: 0.605652173913
+Average AdaBoost Error with 75 estimators: 0.629797101449
+Average AdaBoost Error with 100 estimators: 0.692347826087
+Average AdaBoost Error with 125 estimators: 0.708417391304
+Average AdaBoost Error with 150 estimators: 0.664637681159
+Average AdaBoost Error with 175 estimators: 0.576596273292
+Average AdaBoost Error with 200 estimators: 0.614565217391
+Average AdaBoost Error with 225 estimators: 0.668560386473
+Average AdaBoost Error with 250 estimators: 0.583634782609
+
+Current Learn Rate: 4.0
+Average AdaBoost Error with 25 estimators: 0.856347826087
+Average AdaBoost Error with 50 estimators: 0.905391304348
+Average AdaBoost Error with 75 estimators: 0.923942028986
+Average AdaBoost Error with 100 estimators: 0.932086956522
+Average AdaBoost Error with 125 estimators: 0.936904347826
+Average AdaBoost Error with 150 estimators: 0.939884057971
+Average AdaBoost Error with 175 estimators: 0.942559006211
+Average AdaBoost Error with 200 estimators: 0.944282608696
+Average AdaBoost Error with 225 estimators: 0.945661835749
+Average AdaBoost Error with 250 estimators: 0.946747826087
+
+Current Learn Rate: 8.0
+Average AdaBoost Error with 25 estimators: 0.877043478261
+Average AdaBoost Error with 50 estimators: 0.916782608696
+Average AdaBoost Error with 75 estimators: 0.930028985507
+Average AdaBoost Error with 100 estimators: 0.936608695652
+Average AdaBoost Error with 125 estimators: 0.940591304348
+Average AdaBoost Error with 150 estimators: 0.943275362319
+Average AdaBoost Error with 175 estimators: 0.945167701863
+Average AdaBoost Error with 200 estimators: 0.946586956522
+Average AdaBoost Error with 225 estimators: 0.947671497585
+Average AdaBoost Error with 250 estimators: 0.948556521739
+
+Current Learn Rate: 16.0
+Average AdaBoost Error with 25 estimators: 0.913217391304
+Average AdaBoost Error with 50 estimators: 0.935043478261
+Average AdaBoost Error with 75 estimators: 0.942086956522
+Average AdaBoost Error with 100 estimators: 0.945739130435
+Average AdaBoost Error with 125 estimators: 0.947895652174
+Average AdaBoost Error with 150 estimators: 0.949333333333
+Average AdaBoost Error with 175 estimators: 0.950335403727
+Average AdaBoost Error with 200 estimators: 0.951130434783
+Average AdaBoost Error with 225 estimators: 0.951729468599
+Average AdaBoost Error with 250 estimators: 0.952208695652
