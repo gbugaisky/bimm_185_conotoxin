@@ -1,4 +1,4 @@
-!#usr/bin/env python
+#!usr/bin/env python
 """
     calcuatepI takes in a mature protein sequence in single letter form,
     and returns the pI (Isoelectric Point) of that sequence.

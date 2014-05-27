@@ -5,7 +5,8 @@ import wx
 import wx.lib.sized_controls as sc
 import wx.wizard as wiz
 
-from submodules import SeqValidation, callpBLAST
+from submodules import SeqValidation, callpBLAST, calculateMass, calculatepI, predict
+from submodules.averageCysteineDistance import averageCysteineDistance
 
 #End of imports
 
@@ -80,7 +81,7 @@ class MainFrame(wx.Panel):
             dlg.ShowModal()
             dlg.Destroy()
 
-        elif not SeqValidation.validate_dna_string(sequence):
+        elif not SeqValidation.validate_nuc_string(sequence):
             print "Here"
             dlg = wx.MessageDialog(self, "Sequences must only contain the characters ACGT!",
                 "Syntax Error", wx.OK | wx.ICON_INFORMATION)
@@ -88,13 +89,19 @@ class MainFrame(wx.Panel):
             dlg.Destroy()
 
         else:
-            print callpBLAST.callpBLAST(sequence)
-            dlg = wx.MessageDialog(self, "Your Sequence Is: " + sequence, "INFO",
+            #print callpBLAST.callpBLAST(sequence)
+            mass = calculateMass.calculateMass(sequence, True)
+            pI = calculatepI.calculateIsoelectricPoint(sequence)
+            cysAvg = averageCysteineDistance(sequence)
+            label = predict.predictLabel(mass, pI, cysAvg)
+            dlg = wx.MessageDialog(self, "Your Sequence Is: " + sequence + " with a mass of " + str(mass)
+                + " and a Isoelectric point of " + str(pI) + ".  The predicted pharmacalogical family is " 
+                + str(label) + ".", "INFO",
                 wx.OK | wx.ICON_INFORMATION)
             dlg.ShowModal()
             dlg.Destroy()
 
-app = wx.App(redirect = 1, filename = "consolelog.txt")
-frame = MainWindow(None, "BLAST Test")
+app = wx.App()#(redirect = 1, filename = "consolelog.txt")
+frame = MainWindow(None, "ConoDiscover Test")
 panel = MainFrame(frame)
 app.MainLoop()
