@@ -2,11 +2,11 @@
 
 import os
 import wx
-import wx.lib.sized_controls as sc
-import wx.wizard as wiz
-
 from submodules import SeqValidation, callpBLAST, calculateMass, calculatepI, predict
 from submodules.averageCysteineDistance import averageCysteineDistance
+
+#Manual addition of module for cs_freeze
+from scipy.sparse.csgraph import _validation
 
 #End of imports
 
