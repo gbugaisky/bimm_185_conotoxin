@@ -2,8 +2,9 @@ from cx_Freeze import setup, Executable
 
 # Dependencies are automatically detected, but it might need
 # fine tuning.
-buildOptions = {"packages": [],
-				"include_files": ["classifier.pkl"],
+buildOptions = {"packages": ['scipy'],
+				"include_files": ["classifier.pkl",
+				("C:\python27\lib\site-packages\scipy\special\_ufuncs.pyd", "_ufuncs.pyd")],
 				"excludes": ["C:\python27\lib\site-packages\matplotlib\mpl-data\sample_data\*"] }
 
 import sys
