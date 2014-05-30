@@ -5,8 +5,14 @@ import wx
 from submodules import SeqValidation, callpBLAST, calculateMass, calculatepI, predict
 from submodules.averageCysteineDistance import averageCysteineDistance
 
-#Manual addition of module for cs_freeze
-from scipy.sparse.csgraph import _validation
+#Manual addition of module for cs_freeze, since setup script is not adding them
+def hidden_dependencies_for_exe():
+    from scipy.sparse.csgraph import _validation
+    import scipy.special._ufuncs_cxx
+    import scipy.integrate.vode
+    import scipy.integrate.lsoda
+    import sklearn.utils.sparsetools._graph_validation
+    import sklearn.utils.lgamma
 
 #End of imports
 
@@ -63,7 +69,7 @@ class MainFrame(wx.Panel):
         self.Bind(wx.EVT_RADIOBOX, self.EvtRadioType, self.sequenceType)
 
         # GO button
-        self.submitButton = wx.Button(self, label="BLAST Sequence")
+        self.submitButton = wx.Button(self, label="Classify Sequence")
         grid.Add(self.submitButton, pos=(2, 1))
         self.Bind(wx.EVT_BUTTON, self.OnSubmit, self.submitButton)
 
@@ -75,7 +81,9 @@ class MainFrame(wx.Panel):
 
     def OnSubmit(self, event):
         sequence = self.sequenceBox.GetValue()
+        radio_choice = self.sequenceType.GetValue()
         if not sequence:
+
             dlg = wx.MessageDialog(self, "Must Enter DNA Sequence!", "Error",
                 wx.OK | wx.ICON_INFORMATION)
             dlg.ShowModal()
@@ -101,7 +109,7 @@ class MainFrame(wx.Panel):
             dlg.ShowModal()
             dlg.Destroy()
 
-app = wx.App()#(redirect = 1, filename = "consolelog.txt")
-frame = MainWindow(None, "ConoDiscover Test")
+app = wx.App(redirect = 1, filename = "errorlog.txt")
+frame = MainWindow(None, "ConoDiscover")
 panel = MainFrame(frame)
 app.MainLoop()
