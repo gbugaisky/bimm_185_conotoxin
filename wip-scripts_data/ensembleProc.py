@@ -20,7 +20,7 @@ def ensembleProc(n_estimators, learning_rate, trainfile, testfile):
 		base_estimator=dt_stump,
 		learning_rate=learning_rate,
 		n_estimators=n_estimators,
-		algorithm="SAMME.R")
+		algorithm="SAMME")
 	ada_real.fit(features, labels)
 
 	error = np.zeros((n_estimators,))
@@ -31,11 +31,11 @@ def ensembleProc(n_estimators, learning_rate, trainfile, testfile):
 
 if __name__ == "__main__":
 	FILEPATH = ".\\SeparatedTrainTest\\"
-	N_ESTIMATORS = [25, 50, 75, 100, 125, 150, 175, 200, 225, 250]
+	N_ESTIMATORS = [200, 225, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300, 305, 310, 315, 320, 325, 330, 335, 340, 345, 350]#[25, 50, 75, 100, 125, 150, 175, 200, 225, 250]
 	LEARN_RATES = [0.001, .05, .1, .15, .2, .25, .3, .35, .4, .45, .5, .55, .6, .65, .7, .75, .8, .85, .9, .95, 1.]
 	start = clock()
 
-	with open("AdaBoostErrorRate.txt", 'w') as results:
+	with open("DiscreteAdaBoostErrorRateTo350n.txt", 'w') as results:
 		for learnRate in LEARN_RATES:
 			results.write("\nCurrent Learn Rate: " + str(learnRate) + "\n")
 			for estimator in N_ESTIMATORS:

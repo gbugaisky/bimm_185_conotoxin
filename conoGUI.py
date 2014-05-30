@@ -4,6 +4,8 @@ import os
 import wx
 from submodules import SeqValidation, callpBLAST, calculateMass, calculatepI, predict
 from submodules.averageCysteineDistance import averageCysteineDistance
+from Bio.Seq import Seq
+from Bio.Alphabet import IUPAC
 
 #Manual addition of module for cs_freeze, since setup script is not adding them
 def hidden_dependencies_for_exe():
@@ -62,11 +64,15 @@ class MainFrame(wx.Panel):
         grid.Add(self.sequenceBox, pos=(1, 0))
 
         # DNA/Protein selector
-        sequenceTypeList = ['Nucleotide', "Protein"]
+        sequenceTypeList = ['cDNA', "Protein"]
         self.sequenceType = wx.RadioBox(self, label="What type of sequence?", 
             choices=sequenceTypeList, style=wx.RA_SPECIFY_COLS)
         grid.Add(self.sequenceType, pos=(1, 1))
         self.Bind(wx.EVT_RADIOBOX, self.EvtRadioType, self.sequenceType)
+
+        # Visualization Option
+        self.vizOpt = wx.CheckBox(self, -1, "Show Graph of Data")
+        grid.Add(self.vizOpt, pos=(2, 0))
 
         # GO button
         self.submitButton = wx.Button(self, label="Classify Sequence")
@@ -83,26 +89,40 @@ class MainFrame(wx.Panel):
         sequence = self.sequenceBox.GetValue()
         radio_choice = self.sequenceType.GetValue()
         if not sequence:
+            if radio_choice is "DNA":
+                dlg = wx.MessageDialog(self, "Must Enter cDNA Sequence!", "Error",
+                    wx.OK | wx.ICON_INFORMATION)
+                dlg.ShowModal()
+                dlg.Destroy()
+            else:
+                dlg = wx.MessageDialog(self, "Must Enter Protein Sequence!", "Error",
+                    wx.OK | wx.ICON_INFORMATION)
+                dlg.ShowModal()
+                dlg.Destroy()
 
-            dlg = wx.MessageDialog(self, "Must Enter DNA Sequence!", "Error",
-                wx.OK | wx.ICON_INFORMATION)
+        elif radio_choice is "cDNA" and not SeqValidation.validate_dna_string(sequence):
+            dlg = wx.MessageDialog(self, "Sequences must only contain the characters ACGT!",
+                "Syntax Error", wx.OK | wx.ICON_INFORMATION)
             dlg.ShowModal()
             dlg.Destroy()
 
-        elif not SeqValidation.validate_nuc_string(sequence):
-            print "Here"
-            dlg = wx.MessageDialog(self, "Sequences must only contain the characters ACGT!",
+        elif radio_choice is "Protein" and not SeqValidation.validate_prot_string(sequence):
+            dlg = wx.MessageDialog(self, "Sequences must only contain legal IUPAC abbreviations!",
                 "Syntax Error", wx.OK | wx.ICON_INFORMATION)
             dlg.ShowModal()
             dlg.Destroy()
 
         else:
             #print callpBLAST.callpBLAST(sequence)
+            if radio_choice is "cDNA":
+                sequence = sequence.replace("T", "U")
+                mRNA_seq = Seq(sequence, IUPAC.unambiguous_rna)
+                sequence = mRNA_seq.translate(to_stop=True)[0]
             mass = calculateMass.calculateMass(sequence, True)
             pI = calculatepI.calculateIsoelectricPoint(sequence)
             cysAvg = averageCysteineDistance(sequence)
             label = predict.predictLabel(mass, pI, cysAvg)
-            dlg = wx.MessageDialog(self, "Your Sequence Is: " + sequence + " with a mass of " + str(mass)
+            dlg = wx.MessageDialog(self, "Your Sequence Is: " + sequence + " with an average mass of " + str(mass)
                 + " and a Isoelectric point of " + str(pI) + ".  The predicted pharmacalogical family is " 
                 + str(label) + ".", "INFO",
                 wx.OK | wx.ICON_INFORMATION)

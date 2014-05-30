@@ -11,7 +11,9 @@ import sys
 base = 'Win32GUI' if sys.platform=='win32' else None
 
 executables = [
-    Executable('conoGUI.py', base=base)
+    Executable('conoGUI.py',
+    			base=base,
+    			)
 ]
 
 import os, glob2, numpy, scipy
