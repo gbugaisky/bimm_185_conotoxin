@@ -2,12 +2,12 @@
 
 import os
 import wx
-from submodules import SeqValidation, callpBLAST, calculateMass, calculatepI, predict
+from submodules import SeqValidation, calculateMass, calculatepI, predict, visualize
 from submodules.averageCysteineDistance import averageCysteineDistance
 from Bio.Seq import Seq
 from Bio.Alphabet import IUPAC
 
-#Manual addition of module for cs_freeze, since setup script is not adding them
+#Manual addition of modules for cs_freeze, since setup script is not adding them
 def hidden_dependencies_for_exe():
     from scipy.sparse.csgraph import _validation
     import scipy.special._ufuncs_cxx
@@ -87,7 +87,7 @@ class MainFrame(wx.Panel):
 
     def OnSubmit(self, event):
         sequence = self.sequenceBox.GetValue()
-        radio_choice = self.sequenceType.GetValue()
+        radio_choice = self.sequenceType.GetSelection()
         if not sequence:
             if radio_choice is "DNA":
                 dlg = wx.MessageDialog(self, "Must Enter cDNA Sequence!", "Error",
@@ -126,6 +126,8 @@ class MainFrame(wx.Panel):
                 + " and a Isoelectric point of " + str(pI) + ".  The predicted pharmacalogical family is " 
                 + str(label) + ".", "INFO",
                 wx.OK | wx.ICON_INFORMATION)
+            if self.vizOpt.IsChecked():
+                visualize.visualize(mass, pI, cysAvg)
             dlg.ShowModal()
             dlg.Destroy()
 
