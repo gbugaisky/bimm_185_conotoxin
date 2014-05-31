@@ -118,7 +118,7 @@ class MainFrame(wx.Panel):
                 sequence = sequence.replace("T", "U")
                 mRNA_seq = Seq(sequence, IUPAC.unambiguous_rna)
                 sequence = mRNA_seq.translate(to_stop=True)[0]
-            mass = calculateMass.calculateMass(sequence, True)
+            mass = calculateMass.calculateMass(sequence)
             pI = calculatepI.calculateIsoelectricPoint(sequence)
             cysAvg = averageCysteineDistance(sequence)
             label = predict.predictLabel(mass, pI, cysAvg)
@@ -126,12 +126,12 @@ class MainFrame(wx.Panel):
                 + " and a Isoelectric point of " + str(pI) + ".  The predicted pharmacalogical family is " 
                 + str(label) + ".", "INFO",
                 wx.OK | wx.ICON_INFORMATION)
-            if self.vizOpt.IsChecked():
-                visualize.visualize(mass, pI, cysAvg)
             dlg.ShowModal()
             dlg.Destroy()
+            if self.vizOpt.IsChecked():
+                visualize.visualize(mass, pI, cysAvg)
 
-app = wx.App(redirect = 1, filename = "errorlog.txt")
+app = wx.App()#redirect = 1, filename = "errorlog.txt")
 frame = MainWindow(None, "ConoDiscover")
 panel = MainFrame(frame)
 app.MainLoop()
