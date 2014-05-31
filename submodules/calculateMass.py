@@ -65,7 +65,7 @@ def calculateAverageMass(sequence):
         mass += AVERAGE_MASS_TABLE[aa]
     return mass
 
-def calculateMass(sequence, flag):
+def calculateMass(sequence, flag=None):
     if flag:
         return calculateMonoisotropicMass(sequence)
     else:

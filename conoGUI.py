@@ -118,7 +118,7 @@ class MainFrame(wx.Panel):
                 sequence = sequence.replace("T", "U")
                 mRNA_seq = Seq(sequence, IUPAC.unambiguous_rna)
                 sequence = mRNA_seq.translate(to_stop=True)[0]
-            mass = calculateMass.calculateMass(sequence, True)
+            mass = calculateMass.calculateMass(sequence)
             pI = calculatepI.calculateIsoelectricPoint(sequence)
             cysAvg = averageCysteineDistance(sequence)
             label = predict.predictLabel(mass, pI, cysAvg)
