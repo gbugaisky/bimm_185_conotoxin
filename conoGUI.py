@@ -20,7 +20,7 @@ def hidden_dependencies_for_exe():
 
 class MainWindow(wx.Frame):
     def __init__(self, parent, title):
-        wx.Frame.__init__(self, parent, title=title, size=(800, 600))
+        wx.Frame.__init__(self, parent, title=title, size=(300, 400))
         self.CreateStatusBar()
 
         #Menu Setup
@@ -60,23 +60,23 @@ class MainFrame(wx.Panel):
         grid.Add(self.instructions, pos=(0, 0))
 
         # Sequence sentry box
-        self.sequenceBox = wx.TextCtrl(self, size=(400, -1))
+        self.sequenceBox = wx.TextCtrl(self, -1, size=(200, 100), style=wx.TE_MULTILINE|wx.TE_PROCESS_ENTER)
         grid.Add(self.sequenceBox, pos=(1, 0))
 
         # DNA/Protein selector
         sequenceTypeList = ['cDNA', "Protein"]
         self.sequenceType = wx.RadioBox(self, label="What type of sequence?", 
             choices=sequenceTypeList, style=wx.RA_SPECIFY_COLS)
-        grid.Add(self.sequenceType, pos=(1, 1))
+        grid.Add(self.sequenceType, pos=(2, 0))
         self.Bind(wx.EVT_RADIOBOX, self.EvtRadioType, self.sequenceType)
 
         # Visualization Option
         self.vizOpt = wx.CheckBox(self, -1, "Show Graph of Data")
-        grid.Add(self.vizOpt, pos=(2, 0))
+        grid.Add(self.vizOpt, pos=(3, 0))
 
         # GO button
         self.submitButton = wx.Button(self, label="Classify Sequence")
-        grid.Add(self.submitButton, pos=(2, 1))
+        grid.Add(self.submitButton, pos=(4, 0))
         self.Bind(wx.EVT_BUTTON, self.OnSubmit, self.submitButton)
 
         mainSizer.Add(grid, 0, wx.ALL, 5)
@@ -88,8 +88,9 @@ class MainFrame(wx.Panel):
     def OnSubmit(self, event):
         sequence = self.sequenceBox.GetValue()
         radio_choice = self.sequenceType.GetSelection()
+        print radio_choice
         if not sequence:
-            if radio_choice is "DNA":
+            if radio_choice is 0:
                 dlg = wx.MessageDialog(self, "Must Enter cDNA Sequence!", "Error",
                     wx.OK | wx.ICON_INFORMATION)
                 dlg.ShowModal()
@@ -100,13 +101,13 @@ class MainFrame(wx.Panel):
                 dlg.ShowModal()
                 dlg.Destroy()
 
-        elif radio_choice is "cDNA" and not SeqValidation.validate_dna_string(sequence):
+        elif radio_choice is 0 and not SeqValidation.validate_dna_string(sequence):
             dlg = wx.MessageDialog(self, "Sequences must only contain the characters ACGT!",
                 "Syntax Error", wx.OK | wx.ICON_INFORMATION)
             dlg.ShowModal()
             dlg.Destroy()
 
-        elif radio_choice is "Protein" and not SeqValidation.validate_prot_string(sequence):
+        elif radio_choice is 1 and not SeqValidation.validate_prot_string(sequence):
             dlg = wx.MessageDialog(self, "Sequences must only contain legal IUPAC abbreviations!",
                 "Syntax Error", wx.OK | wx.ICON_INFORMATION)
             dlg.ShowModal()
@@ -122,16 +123,24 @@ class MainFrame(wx.Panel):
             pI = calculatepI.calculateIsoelectricPoint(sequence)
             cysAvg = averageCysteineDistance(sequence)
             label = predict.predictLabel(mass, pI, cysAvg)
-            dlg = wx.MessageDialog(self, "Your Sequence Is: " + sequence + " with an average mass of " + str(mass)
-                + " and a Isoelectric point of " + str(pI) + ".  The predicted pharmacalogical family is " 
-                + str(label) + ".", "INFO",
-                wx.OK | wx.ICON_INFORMATION)
-            if self.vizOpt.IsChecked():
-                visualize.visualize(mass, pI, cysAvg)
-            dlg.ShowModal()
-            dlg.Destroy()
 
-app = wx.App(redirect = 1, filename = "errorlog.txt")
+            if self.vizOpt.IsChecked():
+                dlg = wx.MessageDialog(self, "Your Sequence Is: " + sequence + " with an average mass of " + str(mass)
+                    + " and a Isoelectric point of " + str(pI) + ".  The predicted pharmacalogical family is " 
+                    + str(label) + ".\n\nClick OK to show graph.", "INFO", wx.OK | wx.ICON_INFORMATION)
+                dlg.ShowModal()
+                dlg.Destroy()
+                visualize.visualize(mass, pI, cysAvg)
+            else:
+                dlg = wx.MessageDialog(self, "Your Sequence Is: " + sequence + " with an average mass of " + str(mass)
+                    + " and a Isoelectric point of " + str(pI) + ".  The predicted pharmacalogical family is " 
+                    + str(label) + ".", "INFO", wx.OK | wx.ICON_INFORMATION)
+                dlg.ShowModal()
+                dlg.Destroy()
+
+
+
+app = wx.App()#redirect = 1, filename = "errorlog.txt")
 frame = MainWindow(None, "ConoDiscover")
 panel = MainFrame(frame)
 app.MainLoop()
