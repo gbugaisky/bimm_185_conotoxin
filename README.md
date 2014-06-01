@@ -2,10 +2,15 @@ bimm_185_conotoxin
 ==================
 
 This project is for analysis of conotoxins.
-This project used the following external modules:
+This project mainly used the following external modules (and all their dependencies):
 * wxPython
 * BioPython
 * matplotlib
+* scikit-learn
+
+The current build is hosted on Dropbox, mainly due to being too large for Github
+in its zipped form (105 MB), and being over 300 MB in its uncompressed form.
+The current build is here: https://www.dropbox.com/s/lcriv3gxwsrynos/build.zip
 
 The project right now is extremely unorganized, but this is the general
 ordering of things:
