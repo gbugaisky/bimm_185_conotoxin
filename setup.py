@@ -3,9 +3,10 @@ from cx_Freeze import setup, Executable
 # Dependencies are automatically detected, but it might need
 # fine tuning.
 buildOptions = {"packages": ['scipy', 'scipy.special'],
-				"include_files": [".\classifier.pkl"],
+				"include_files": [".\classifier.pkl", ".\mass_isoElectricPoint_cysAvg.csv"],
 				"includes": [],
-				"excludes": ["C:\python27\lib\site-packages\matplotlib\mpl-data\sample_data\*"] }
+				"excludes": ["C:\python27\lib\site-packages\matplotlib\mpl-data\sample_data\*"],
+        "namespace_packages": ['mpl_toolkits'] }
 
 import sys
 base = 'Win32GUI' if sys.platform=='win32' else None

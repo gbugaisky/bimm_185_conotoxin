@@ -15,6 +15,8 @@ def hidden_dependencies_for_exe():
     import scipy.integrate.lsoda
     import sklearn.utils.sparsetools._graph_validation
     import sklearn.utils.lgamma
+    import matplotlib.backends.backend_tkagg
+    #import mpl_toolkits.mplot3d.axis3d
 
 #End of imports
 
@@ -140,7 +142,7 @@ class MainFrame(wx.Panel):
 
 
 
-app = wx.App()#redirect = 1, filename = "errorlog.txt")
+app = wx.App(redirect = 1, filename = "errorlog.txt")
 frame = MainWindow(None, "ConoDiscover")
 panel = MainFrame(frame)
 app.MainLoop()
