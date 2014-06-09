@@ -117,9 +117,12 @@ class MainFrame(wx.Panel):
 
         else:
             #print callpBLAST.callpBLAST(sequence)
-            if radio_choice is "cDNA":
-                sequence = sequence.replace("T", "U")
+            if radio_choice is 0:
+                sequence = sequence.upper().replace("T", "U")
+                while len(sequence) % 3 != 0:
+                    sequence += 'N'
                 mRNA_seq = Seq(sequence, IUPAC.unambiguous_rna)
+                print mRNA_seq
                 sequence = mRNA_seq.translate(to_stop=True)[0]
             mass = calculateMass.calculateMass(sequence)
             pI = calculatepI.calculateIsoelectricPoint(sequence)
