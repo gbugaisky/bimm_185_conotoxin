@@ -24,8 +24,9 @@ files = []
 for d in explore_dirs:
     files.extend( glob2.glob( os.path.join(d, '**', '*.pyd') ) )
 
+print files[1].split('C:\\python27\\lib\\site-packages\\',1)[1]
 for f in files:
-    fn = f.split('C:\\Python27\\lib\\site-packages\\',1)[1].replace('\\','.').split('.pyd',1)[0]
+    fn = f.split('C:\\python27\\lib\\site-packages\\',1)[1].replace('\\','.').split('.pyd',1)[0]
     buildOptions["includes"].append(fn)
 
 setup(name='ConoPredict',
