@@ -60,7 +60,7 @@ def visualize(mass, iPoint, cysAvg):
 	newpoint = np.asanyarray(pointarray)
 	newpoint = np.reshape(newpoint, (-1, 3))
 	print newpoint
-	#ax.plot(newpoint[0], newpoint[1], newpoint[2], 'o', c='#FFFFFF', label="Given Point")
+	ax.plot([newpoint[0][0]], [newpoint[0][1]], [newpoint[0][2]], 'o', c='#FFFFFF', label="Given Point")
 	#ax.plot(mass, iPoint, cysAvg, 'o', c="#FFFFFF", label="Given Point")
 	ax.set_title("Feature Sets: Mass, Isoelectric Point, Average Cysteine Distance")
 	ax.set_xlabel('Mass')
