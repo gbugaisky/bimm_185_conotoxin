@@ -19,27 +19,43 @@ def visualize(mass, iPoint, cysAvg):
 	color_REF = ['#FF0000', '#0000CC', '#003300', '#E6E600', '#CC9900']
 
 	#Initialize all data arrays with known sizes
-	alpha = np.genfromtxt(FILEPATH + "alpha.csv", delimiter=' ', names=['x', 'y', 'z', 'label'])
-	delta = np.genfromtxt(FILEPATH + "delta.csv", delimiter=' ', names=['x', 'y', 'z', 'label'])
-	chi = np.genfromtxt(FILEPATH + "chi.csv", delimiter=' ', names=['x', 'y', 'z', 'label'])
-	mu = np.genfromtxt(FILEPATH + "mu.csv", delimiter=' ', names=['x', 'y', 'z', 'label'])
-	omega = np.genfromtxt(FILEPATH + "omega.csv", delimiter=' ', names=['x', 'y', 'z', 'label'])
+	alpha_init = np.genfromtxt(FILEPATH + "alpha.csv", delimiter=' ', names=['x', 'y', 'z', 'label'])
+	delta_init = np.genfromtxt(FILEPATH + "delta.csv", delimiter=' ', names=['x', 'y', 'z', 'label'])
+	chi_init = np.genfromtxt(FILEPATH + "chi.csv", delimiter=' ', names=['x', 'y', 'z', 'label'])
+	mu_init = np.genfromtxt(FILEPATH + "mu.csv", delimiter=' ', names=['x', 'y', 'z', 'label'])
+	omega_init = np.genfromtxt(FILEPATH + "omega.csv", delimiter=' ', names=['x', 'y', 'z', 'label'])
 
+	alpha = []
+	delta = []
+	chi = []
+	mu = []
+	omega = []
+	#Transformation of lists into usable form
+	for values in alpha_init:
+		alpha += [[values[0], values[1], values[2]]]
+	for values in delta_init:
+		delta += [[values[0], values[1], values[2]]]
+	for values in chi_init:
+		chi += [[values[0], values[1], values[2]]]
+	for values in mu_init:
+		mu += [[values[0], values[1], values[2]]]
+	for values in omega_init:
+		omega += [[values[0], values[1], values[2]]]
 
+	alpha = np.array(alpha)
+	delta = np.array(delta)
+	chi = np.array(chi)
+	mu = np.array(mu)
+	omega = np.array(omega)
 
 	fig = plt.figure()
 	ax = fig.add_subplot(111, projection='3d')
 	i = 0
 	refList = [delta, mu, omega, alpha, chi]
 
-	for element in refList, i in range(0,5):
-		#print element
+	for i in range(0,5):
 		#print color_REF[(element['label'].astype(int))]
-		if isinstance(element, bool):
-			continue
-		for data in element:
-			for j in range(0, len(data)):
-				ax.plot([data[j][0]], [data[j][1]], [data[j][2]], 'o', c=color_REF[i], label=LABELS_TABLE[i], alpha=0.1)
+		ax.plot(refList[i][:,0], refList[i][:,1], refList[i][:,2], 'o', c=color_REF[i], label=LABELS_TABLE[i], alpha=0.2)
 	pointarray = [mass, iPoint, cysAvg]
 	newpoint = np.asanyarray(pointarray)
 	newpoint = np.reshape(newpoint, (-1, 3))
